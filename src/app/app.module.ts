@@ -14,14 +14,11 @@ import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent,
-    HomeComponent,
-    DashboardBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule,
+    //HomeModule,
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,

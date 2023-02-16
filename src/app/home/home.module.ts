@@ -11,9 +11,8 @@ import { MaterialModule } from '../common/material/material.module';
 
 @NgModule({
   declarations: [
-    //HomeComponent,
+    HomeComponent,
     HomeSideBarComponent,
-    DashboardComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +21,7 @@ import { MaterialModule } from '../common/material/material.module';
     ReactiveFormsModule,
    // FlexLayoutModule,
     MaterialModule
+
   ]
 })
 export class HomeModule { }
