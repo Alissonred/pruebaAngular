@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+//import { MatDrawer } from "@angular/material/sidenav";
+import { Router } from "@angular/router";
+import { HomeComponent } from "../home.component";
 
 @Component({
   selector: 'app-home-side-bar',
@@ -7,4 +10,37 @@ import { Component } from '@angular/core';
 })
 export class HomeSideBarComponent {
 
+  @Input()
+  public hideToggle: boolean = false;
+
+  @Input()
+  public collapsed: boolean = false;
+
+  @Input()
+  public menusList: any[] = [];
+
+ /*  @Input()
+  public drawer: MatDrawer; */
+
+  public selectedMenu = null;
+
+  constructor(
+    private router: Router) { }
+
+  public ngOnInit(): void {
+  }
+
+/*   public async gotoMenu(menu) {
+    await this.router.navigateByUrl(menu.ruta);
+    if (this.drawer) {
+      this.drawer.close();
+    }
+  } */
+
+
+
+  public collapse() {
+    this.collapsed = !this.collapsed;
+    localStorage.setItem("Colapsado", this.collapsed ? "Si" : "No");
+  }
 }
