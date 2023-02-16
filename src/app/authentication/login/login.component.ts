@@ -5,6 +5,8 @@ import { Router } from "@angular/router";
 import { ToastService } from "src/app/services/toast.service";
 import { AuthService } from "../../services/auth.service";
 import { LoadingService } from "../../services/loading.service";
+import { User_login } from 'src/app/interfaces/login.interface';
+
 
 @Component({
   selector: 'app-login',
@@ -13,6 +15,13 @@ import { LoadingService } from "../../services/loading.service";
 })
 export class LoginComponent implements OnInit {
   public title: string = "Iniciar Session";
+  public loginForm = new FormGroup({
+    user: new FormControl('', Validators.required),
+    password : new FormControl('', Validators.required),
+
+  })
+
+
   public isLoggedIn: boolean = false;
   public error: string = "";
   public form!: FormGroup;
@@ -53,8 +62,11 @@ export class LoginComponent implements OnInit {
   public ChangePassMode() {
     this.showPassword = !this.showPassword;
   }
-  onLogin(){
-    
+  onLogin(form: any){
+    this.authService.loginByEmail(form).subscribe(data =>{console.log(data)
+    })
+   console.log(form);
+
   }
   public async login() {'.....'}
 

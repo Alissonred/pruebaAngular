@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardBoxComponent } from './home/dashboard/dashboard-box/dashboard-box.component';
 import { MaterialModule } from "./common/material/material.module";
 import { HomeModule } from './home/home.module';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { HomeModule } from './home/home.module';
     HomeModule,
     FormsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

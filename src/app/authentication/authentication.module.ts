@@ -5,6 +5,7 @@ import { AuthenticationComponent } from './authentication.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthenticationRouting } from './authentication.routing';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AuthenticationRouting } from './authentication.routing';
     FormsModule,
     ReactiveFormsModule,
     AuthenticationRouting,
+    HttpClientModule,
   ],
   exports: [ LoginComponent ]
 })
