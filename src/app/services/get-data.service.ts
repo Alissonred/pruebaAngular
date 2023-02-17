@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { NationalDailyData } from '../interfaces/nationalDailyData.type';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SummaryCountries } from '../interfaces/summaryCountries.interface';
+import { DataNotes } from '../interfaces/dataNote.interface';
 
 
 @Injectable({
@@ -10,18 +11,21 @@ import { SummaryCountries } from '../interfaces/summaryCountries.interface';
 })
 export class GetDataService {
 
- //url:string = 'https://api.covidtracking.com/v2/'
- url:string = 'https://api.covid19api.com/'
+
+ urlcovid19api:string = 'https://api.covid19api.com/' ////api externa
+ urlJsonServer: string = 'http://localhost:3000/notes' ////api simulada con json server
  constructor(private http: HttpClient) { }
 
-/* getNationalDailyData(date:string): Observable<NationalDailyData>{
- let address = this.url + `us/daily/${date}.json`
- return this.http.get<NationalDailyData>(address);
-}
- */
-getTodaySummaryCountries(): Observable<SummaryCountries>{
-  let address = this.url + "summary"
+
+ getTodaySummaryCountries(): Observable<SummaryCountries>{
+  let address = this.urlcovid19api + "summary"
   return this.http.get<SummaryCountries>(address);
  }
 
+ addNote(data:object):Observable<any>{
+  return this.http.post(this.urlJsonServer, data);
+ }
+ getNotes():Observable<any>{
+  return this.http.get(this.urlJsonServer);
+ }
 }

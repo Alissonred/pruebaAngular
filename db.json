@@ -16,21 +16,34 @@
   "profile": {
     "name": "typicode"
   },
-  "notes":[
+  "notes": [
     {
       "id": 1,
       "Date": "12/11/2022",
-      "TotalConfirmed" : 10000,
-      "TotalDeaths" : 1.500,
-      "TotalRecovered" : 12
+      "TotalConfirmed": 10000,
+      "TotalDeaths": 1.5,
+      "TotalRecovered": 12
     },
     {
-      "id": 1,
+      "id": 3,
       "Date": "12/11/2022",
-      "TotalConfirmed" : 10000,
-      "TotalDeaths" : 1.500,
-      "TotalRecovered" : 12
+      "TotalConfirmed": 10000,
+      "TotalDeaths": 1.5,
+      "TotalRecovered": 12
+    },
+    {
+      "Date": "12/10/2022",
+      "TotalConfirmed": 1196153,
+      "TotalDeaths": 1613,
+      "TotalRecovered": 6461,
+      "id": 2
+    },
+    {
+      "Date": "10/12/2021",
+      "TotalConfirmed": 5613,
+      "TotalDeaths": 2623,
+      "TotalRecovered": 16123,
+      "id": 4
     }
   ]
-
 }
