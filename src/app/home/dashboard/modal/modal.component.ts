@@ -11,8 +11,15 @@ export class ModalComponent {
 
   constructor(private _fb: FormBuilder){
     this.addEditForm = this._fb.group({
-      ///colocar cada uno de los campos vacios
+      Date : "",
+      TotalConfirmed : null,
+      TotalDeaths : null,
+      TotalRecovered : null,
     })
+
+  }
+  addEditElement(){
+    console.log(this.addEditForm.value, 'es lo que se añade');
 
   }
 }

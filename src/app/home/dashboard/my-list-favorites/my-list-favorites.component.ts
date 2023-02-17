@@ -18,9 +18,6 @@ export class MyListFavoritesComponent {
   deleteElement(){
 
   }
-  showElements(){
-
-  }
   createElements(){
 
   }

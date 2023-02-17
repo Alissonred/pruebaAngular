@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "notes":[
+    {
+      "id": 1,
+      "Date": "12/11/2022",
+      "TotalConfirmed" : 10000,
+      "TotalDeaths" : 1.500,
+      "TotalRecovered" : 12
+    },
+    {
+      "id": 1,
+      "Date": "12/11/2022",
+      "TotalConfirmed" : 10000,
+      "TotalDeaths" : 1.500,
+      "TotalRecovered" : 12
+    }
+  ]
+
+}

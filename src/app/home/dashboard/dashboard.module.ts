@@ -31,7 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ShowCounutriesComponent } from './show-counutries/show-counutries.component';
 import { MyListFavoritesComponent } from './my-list-favorites/my-list-favorites.component';
 import { ModalComponent } from './modal/modal.component';
-
+import { DataNoteComponent } from './data-note/data-note.component';
 
 
 
@@ -42,7 +42,7 @@ import { ModalComponent } from './modal/modal.component';
     ShowCounutriesComponent,
     MyListFavoritesComponent,
     ModalComponent,
-
+    DataNoteComponent,
   ],
   imports: [
     CommonModule,
