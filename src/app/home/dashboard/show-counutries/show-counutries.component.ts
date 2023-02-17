@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { GetDataService } from 'src/app/services/get-data.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import { SummaryCountries } from 'src/app/interfaces/summaryCountries.interface';
-
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-show-counutries',
@@ -60,11 +62,21 @@ export class ShowCounutriesComponent  implements OnInit{
 		}
   ]
 
-  constructor(private apiGet:GetDataService){
-
-  }
+  constructor(private apiGet:GetDataService){}
   ngOnInit(): void {
-this.apiGet.getTodaySummaryCountries().subscribe(data =>{
+  this.apiGet.getTodaySummaryCountries().subscribe(
+    {
+      next:(res)=>{
+        console.log(res , 'anddd');
+        this.dataSource = new MatTableDataSource(res.Countries);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      },
+      error:(err:any)=>{
+        console.log(err);
+      }
+    }
+ /*  data =>{
   this.countriesList = data.Countries;
   this.globalCipher= data.Global;
   this.countriesListPage = [...data.Countries].slice(0,10)
@@ -72,14 +84,26 @@ this.apiGet.getTodaySummaryCountries().subscribe(data =>{
   console.log(this.countriesList, 'es list')
   //console.log(this.countriesList.slice(0,10), 'es list')
   console.log(this.countriesListPage);
+} */
+)}
 
-})
 
+displayedColumns: string[] = ['Country', 'NewConfirmed', 'TotalConfirmed', 'NewDeaths', 'TotalDeaths', 'TotalRecovered'];
+dataSource!: MatTableDataSource<any>;
+
+@ViewChild(MatPaginator) paginator!: MatPaginator;
+@ViewChild(MatSort) sort!: MatSort;
+
+
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  if (this.dataSource.paginator) {
+    this.dataSource.paginator.firstPage();
+  }
 }
 
-  dataSource = this.example//this.countriesListPage//[...this.countriesList].slice(0,10)//this.countriesList//this.example; //this.countriesList.slice(0,10)
-  columnsToDisplay = ['Country', 'NewConfirmed', 'TotalConfirmed', 'NewDeaths', 'TotalDeaths', 'TotalRecovered'];
-  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
-  expandedElement!: SummaryCountries | null;
+
 
 }

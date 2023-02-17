@@ -17,7 +17,7 @@ export class GetDataService {
  constructor(private http: HttpClient) { }
 
 
- getTodaySummaryCountries(): Observable<SummaryCountries>{
+ getTodaySummaryCountries(): Observable<any>{
   let address = this.urlcovid19api + "summary"
   return this.http.get<SummaryCountries>(address);
  }
