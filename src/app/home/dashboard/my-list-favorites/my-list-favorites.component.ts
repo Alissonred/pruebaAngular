@@ -11,9 +11,4 @@ export class MyListFavoritesComponent {
   public editState = false;
   constructor(private _dialog : MatDialog){}
 
-
-  openAddEditForm(){
-    this._dialog.open(ModalComponent)
-  }
- 
 }

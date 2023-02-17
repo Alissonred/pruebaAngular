@@ -25,6 +25,9 @@ export class GetDataService {
  addNote(data:object):Observable<any>{
   return this.http.post<DataNotes>(this.urlJsonServer, data);
  }
+ updateNote(id : number, data:any):Observable<any>{
+  return this.http.put<DataNotes>(this.urlJsonServer +"/"+ id, data);
+ }
  getNotes():Observable<any>{
   return this.http.get<DataNotes>(this.urlJsonServer);
  }

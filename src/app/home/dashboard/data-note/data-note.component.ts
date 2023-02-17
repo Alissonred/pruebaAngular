@@ -33,15 +33,17 @@ export class DataNoteComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
   openAddEditForm(){
-    this._dialog.open(ModalComponent)
-    //////////////////pte pasar acá la peticion
-    this.getElements();
+    const modal = this._dialog.open(ModalComponent)
+    modal.afterClosed().subscribe({
+      next:(value)=>{
+        if(value){this.getElements();}
+      }
+    })
   }
 
   getElements(){
     this._getService.getNotes().subscribe({
       next:(res)=>{
-        //console.log(res , 'anddd');
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -51,18 +53,31 @@ export class DataNoteComponent implements OnInit{
   }
 
   deleteElement(id: number): void {
-    this._getService.deleteNotes(id).subscribe({
+
+   if(confirm('Do you want to delete this note?')){ this._getService.deleteNotes(id).subscribe({
       next: (res)=>{
         alert('Note deleted succesfully!')
         this.getElements();
       },
 
       error:console.log,
-    })
+    })}else{
+      alert('The note has not been removed.')
+    }
+
   }
 
-  editElement(id: string): void {
-    this._dialog.open(ModalComponent)
+
+  editElement(data:any){
+    const modal = this._dialog.open(ModalComponent, {
+      data
+    })
+    modal.afterClosed().subscribe({
+      next:(value)=>{
+        if(value){this.getElements();}
+      }
+    })
+
   }
 
   applyFilter(event: Event) {

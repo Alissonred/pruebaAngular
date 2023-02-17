@@ -18,27 +18,6 @@
   },
   "notes": [
     {
-      "id": 1,
-      "Date": "12/11/2022",
-      "TotalConfirmed": 10000,
-      "TotalDeaths": 1.5,
-      "TotalRecovered": 12
-    },
-    {
-      "id": 3,
-      "Date": "12/11/2022",
-      "TotalConfirmed": 10000,
-      "TotalDeaths": 1.5,
-      "TotalRecovered": 12
-    },
-    {
-      "Date": "12/10/2022",
-      "TotalConfirmed": 1196153,
-      "TotalDeaths": 1613,
-      "TotalRecovered": 6461,
-      "id": 2
-    },
-    {
       "Date": "10/12/2021",
       "TotalConfirmed": 5613,
       "TotalDeaths": 2623,
@@ -53,25 +32,25 @@
       "id": 8
     },
     {
+      "Date": "2023-02-16T05:00:00.000Z",
+      "TotalConfirmed": 54633,
+      "TotalDeaths": 6434,
+      "TotalRecovered": 5464,
+      "id": 10
+    },
+    {
       "Date": "2023-02-17T05:00:00.000Z",
-      "TotalConfirmed": 463131,
-      "TotalDeaths": 5656,
-      "TotalRecovered": 56,
+      "TotalConfirmed": 1196153,
+      "TotalDeaths": 1613,
+      "TotalRecovered": 6461,
+      "id": 11
+    },
+    {
+      "Date": "2023-02-09T05:00:00.000Z",
+      "TotalConfirmed": 1,
+      "TotalDeaths": 1613,
+      "TotalRecovered": 6461,
       "id": 12
-    },
-    {
-      "Date": "2023-02-16T05:00:00.000Z",
-      "TotalConfirmed": 0,
-      "TotalDeaths": 0,
-      "TotalRecovered": 0,
-      "id": 13
-    },
-    {
-      "Date": "2023-02-16T05:00:00.000Z",
-      "TotalConfirmed": 20,
-      "TotalDeaths": 20,
-      "TotalRecovered": 20,
-      "id": 14
     }
   ]
 }

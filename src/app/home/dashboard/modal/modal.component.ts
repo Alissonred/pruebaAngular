@@ -1,6 +1,7 @@
 import { DialogRef } from '@angular/cdk/dialog';
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
@@ -8,13 +9,14 @@ import { GetDataService } from 'src/app/services/get-data.service';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent {
+export class ModalComponent implements OnInit {
   addEditForm : FormGroup
 
   constructor(
    private _fb: FormBuilder,
    private _addService: GetDataService,
-   private _dialogRef: DialogRef<ModalComponent>
+   private _dialogRef: MatDialogRef<ModalComponent>,
+   @Inject(MAT_DIALOG_DATA) public data: any,
    ){
     this.addEditForm = this._fb.group({
       Date : null,
@@ -24,17 +26,35 @@ export class ModalComponent {
     })
 
   }
+
+  ngOnInit(): void {
+      this.addEditForm.patchValue(this.data)
+  }
   addEditElement(){
-    this._addService.addNote(this.addEditForm.value).subscribe({
-      next:(val:any)=>{
-        alert('Note created succesfully!')
-        this._dialogRef.close()
-      },
-      error:(err:any)=>{
-        console.log(err);
-      }
-    })
-    console.log(this.addEditForm.value, 'added');
+    if(this.data){ //// pte validar campos antes de envío
+      this._addService.updateNote(this.data.id, this.addEditForm.value).subscribe({
+        next:(val:any)=>{
+          alert('Note Updated succesfully!')
+          this._dialogRef.close(true)
+          
+        },
+        error:(err:any)=>{
+          console.log(err);
+        }
+      })
+      console.log(this.addEditForm.value, 'updated');
+    }else{
+      this._addService.addNote(this.addEditForm.value).subscribe({
+        next:(val:any)=>{
+          alert('Note created succesfully!')
+          this._dialogRef.close(true)
+        },
+        error:(err:any)=>{
+          console.log(err);
+        }
+      })
+      console.log(this.addEditForm.value, 'added');
+    }
 
   }
 }
