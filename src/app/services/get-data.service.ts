@@ -17,15 +17,19 @@ export class GetDataService {
  constructor(private http: HttpClient) { }
 
 
- getTodaySummaryCountries(): Observable<any>{
+ getTodaySummaryCountries(): Observable<SummaryCountries>{
   let address = this.urlcovid19api + "summary"
   return this.http.get<SummaryCountries>(address);
  }
 
  addNote(data:object):Observable<any>{
-  return this.http.post(this.urlJsonServer, data);
+  return this.http.post<DataNotes>(this.urlJsonServer, data);
  }
  getNotes():Observable<any>{
-  return this.http.get(this.urlJsonServer);
+  return this.http.get<DataNotes>(this.urlJsonServer);
  }
+ deleteNotes(id : number):Observable<any>{
+  return this.http.delete<DataNotes>(this.urlJsonServer +"/"+ id);
+ }
+
 }

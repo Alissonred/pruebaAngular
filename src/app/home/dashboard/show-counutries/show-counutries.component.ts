@@ -17,50 +17,6 @@ export class ShowCounutriesComponent  implements OnInit{
   countriesList!: Array<object>;
   countriesListPage!: Array<object>;
 
-  example = [
-		{
-			"ID": "e92ded93-3511-4823-9254-c5594aa67460",
-			"Country": "Afghanistan",
-			"CountryCode": "AF",
-			"Slug": "afghanistan",
-			"NewConfirmed": 20,
-			"TotalConfirmed": 209056,
-			"NewDeaths": 0,
-			"TotalDeaths": 7896,
-			"NewRecovered": 0,
-			"TotalRecovered": 0,
-			"Date": "2023-02-17T05:58:27.847Z",
-			"Premium": {}
-		},
-		{
-			"ID": "b9d970ef-6cad-4820-a99d-f06b63891901",
-			"Country": "Albania",
-			"CountryCode": "AL",
-			"Slug": "albania",
-			"NewConfirmed": 0,
-			"TotalConfirmed": 334264,
-			"NewDeaths": 0,
-			"TotalDeaths": 3596,
-			"NewRecovered": 0,
-			"TotalRecovered": 0,
-			"Date": "2023-02-17T05:58:27.847Z",
-			"Premium": {}
-		},
-		{
-			"ID": "3b79a571-6c5c-4147-8b30-d75f73bff376",
-			"Country": "Algeria",
-			"CountryCode": "DZ",
-			"Slug": "algeria",
-			"NewConfirmed": 12,
-			"TotalConfirmed": 271421,
-			"NewDeaths": 0,
-			"TotalDeaths": 6881,
-			"NewRecovered": 0,
-			"TotalRecovered": 0,
-			"Date": "2023-02-17T05:58:27.847Z",
-			"Premium": {}
-		}
-  ]
 
   constructor(private apiGet:GetDataService){}
   ngOnInit(): void {
@@ -76,15 +32,7 @@ export class ShowCounutriesComponent  implements OnInit{
         console.log(err);
       }
     }
- /*  data =>{
-  this.countriesList = data.Countries;
-  this.globalCipher= data.Global;
-  this.countriesListPage = [...data.Countries].slice(0,10)
-  console.log(data);
-  console.log(this.countriesList, 'es list')
-  //console.log(this.countriesList.slice(0,10), 'es list')
-  console.log(this.countriesListPage);
-} */
+
 )}
 
 

@@ -15,10 +15,5 @@ export class MyListFavoritesComponent {
   openAddEditForm(){
     this._dialog.open(ModalComponent)
   }
-  deleteElement(){
-
-  }
-  createElements(){
-
-  }
+ 
 }

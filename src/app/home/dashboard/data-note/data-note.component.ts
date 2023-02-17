@@ -26,55 +26,44 @@ export class DataNoteComponent implements OnInit{
     }
 
 
-  ELEMENT_DATA: DataNotes[] = [
-    {
-      id: '1',
-      Date: '12/11/2022',
-      TotalConfirmed: 10000,
-      TotalDeaths: 1.500,
-      TotalRecovered: 12,
-    },
-    {
-      id: '2',
-      Date: '12/11/2022',
-      TotalConfirmed: 10000,
-      TotalDeaths: 1.500,
-      TotalRecovered: 12,
-    },
-
-  ];
-
   displayedColumns: string[] = ['Id', 'Date', 'Confirmed', 'Deaths', 'Recovered', 'Options'];
   dataSource !: MatTableDataSource<DataNotes>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-
-  deleteElement(id: string): void {
-    console.log('elimina');
-
-  }
-
-  editElement(id: string): void {
-    console.log('edita');
+  openAddEditForm(){
     this._dialog.open(ModalComponent)
+    //////////////////pte pasar acá la peticion
+    this.getElements();
   }
 
   getElements(){
     this._getService.getNotes().subscribe({
       next:(res)=>{
-        console.log(res , 'anddd');
+        //console.log(res , 'anddd');
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
-      error:(err:any)=>{
-        console.log(err);
-      }
+      error:console.log,
     })
   }
 
+  deleteElement(id: number): void {
+    this._getService.deleteNotes(id).subscribe({
+      next: (res)=>{
+        alert('Note deleted succesfully!')
+        this.getElements();
+      },
+
+      error:console.log,
+    })
+  }
+
+  editElement(id: string): void {
+    this._dialog.open(ModalComponent)
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -17,7 +17,7 @@ export class ModalComponent {
    private _dialogRef: DialogRef<ModalComponent>
    ){
     this.addEditForm = this._fb.group({
-      Date : "",
+      Date : null,
       TotalConfirmed : null,
       TotalDeaths : null,
       TotalRecovered : null,

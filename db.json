@@ -44,6 +44,34 @@
       "TotalDeaths": 2623,
       "TotalRecovered": 16123,
       "id": 4
+    },
+    {
+      "Date": "12/10/2022",
+      "TotalConfirmed": 54633,
+      "TotalDeaths": 6434,
+      "TotalRecovered": 5464,
+      "id": 8
+    },
+    {
+      "Date": "2023-02-17T05:00:00.000Z",
+      "TotalConfirmed": 463131,
+      "TotalDeaths": 5656,
+      "TotalRecovered": 56,
+      "id": 12
+    },
+    {
+      "Date": "2023-02-16T05:00:00.000Z",
+      "TotalConfirmed": 0,
+      "TotalDeaths": 0,
+      "TotalRecovered": 0,
+      "id": 13
+    },
+    {
+      "Date": "2023-02-16T05:00:00.000Z",
+      "TotalConfirmed": 20,
+      "TotalDeaths": 20,
+      "TotalRecovered": 20,
+      "id": 14
     }
   ]
 }

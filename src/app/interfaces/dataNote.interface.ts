@@ -1,6 +1,6 @@
 export interface DataNotes{
-  id :string,
-  Date : string,
+  id :number,
+  Date : Date,
   TotalConfirmed : number,
   TotalDeaths : number,
   TotalRecovered : number,

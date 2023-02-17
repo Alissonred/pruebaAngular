@@ -26,7 +26,6 @@ import { DashboardComponent } from './dashboard.component';
 import { FormControlDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardBoxComponent } from './dashboard-box/dashboard-box.component';
 import { HomeModule } from '../home.module';
-
 import { MatDialogModule } from '@angular/material/dialog';
 import { ShowCounutriesComponent } from './show-counutries/show-counutries.component';
 import { MyListFavoritesComponent } from './my-list-favorites/my-list-favorites.component';
@@ -76,7 +75,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatFormFieldModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
 
   ]
 })
