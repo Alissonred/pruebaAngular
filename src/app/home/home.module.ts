@@ -10,14 +10,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../common/material/material.module';
 
 import { MatDialogModule } from '@angular/material/dialog';
-import { AddEditElementComponent } from './crud/add-edit-element/add-edit-element.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     HomeComponent,
     HomeSideBarComponent,
-    AddEditElementComponent
 
   ],
   imports: [
@@ -28,6 +26,7 @@ import { AddEditElementComponent } from './crud/add-edit-element/add-edit-elemen
    // FlexLayoutModule,
     MaterialModule,
     MatDialogModule,
+    MatFormFieldModule
 
   ]
 })

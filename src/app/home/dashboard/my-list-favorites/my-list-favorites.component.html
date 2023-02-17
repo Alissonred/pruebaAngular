@@ -1,0 +1,8 @@
+<p>my-list-favorites works!</p>
+
+<div>
+  <button *ngIf="editState" (click)="openAddEditForm()">editar</button>
+  <button (click)="deleteElement()">borrar</button>
+  <button *ngIf = "!editState" (click)="openAddEditForm()">agregar</button>
+  <button (click)="showElements()">Actualizar muestra</button>
+</div>

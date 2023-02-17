@@ -9,10 +9,14 @@
   <!-- Showing dashboard with information -->
   <div class="ScrollBar dashboard-box-wrapper">
     <br/>
-    <div>nlnnllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+
+    <div>n
+      <a  routerLink="show-countries">Countries today</a>
+      <a routerLink="list-favorites">my list</a>
     </div>
+    <router-outlet></router-outlet>
+
     <div *ngFor="let data of elements">
-      <app-dashboard-box >kjknknk</app-dashboard-box>
       <!-- <app-dashboard-box [data]="data" [mainRef]="this"></app-dashboard-box> -->
     </div>
     <br/>

@@ -6,6 +6,9 @@ import { GetDataService } from 'src/app/services/get-data.service';
 import { Route, Router } from '@angular/router';
 import { NationalDailyData } from 'src/app/interfaces/nationalDailyData.type';
 import { MatDialog } from '@angular/material/dialog';
+import { SummaryCountries } from 'src/app/interfaces/summaryCountries.interface';
+import { MyListFavoritesComponent } from './my-list-favorites/my-list-favorites.component';
+
 
 
 @Component({
@@ -21,7 +24,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class DashboardComponent {
 
   public datos!: NationalDailyData;
-
+  public collapsed = false;
   public elements: DashboardItem[] = [];
   public loading = false;
   public ngxLoadingAnimationTypes = {
@@ -44,15 +47,20 @@ export class DashboardComponent {
     private get : GetDataService,
     private router: Router,
 
+
   ) {}
 
 
   public ngOnInit() {
     //this.getData().then();
-    this.get.getNationalDailyData("2021-01-02").subscribe(data=>{
+/*     this.get.getNationalDailyData("2021-01-02").subscribe(data=>{
       this.datos= data;
       console.log(data, 'es dataaa');
-    })
+    }) */
+//   this.get.getTodaySummaryCountries().subscribe(data=>{
+//   console.log(data, 'es dataaa');
+// })
+
   }
 
   /**

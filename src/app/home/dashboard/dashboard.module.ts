@@ -28,6 +28,10 @@ import { DashboardBoxComponent } from './dashboard-box/dashboard-box.component';
 import { HomeModule } from '../home.module';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { ShowCounutriesComponent } from './show-counutries/show-counutries.component';
+import { MyListFavoritesComponent } from './my-list-favorites/my-list-favorites.component';
+import { ModalComponent } from './modal/modal.component';
+
 
 
 
@@ -35,6 +39,10 @@ import { MatDialogModule } from '@angular/material/dialog';
   declarations: [
     DashboardComponent,
     DashboardBoxComponent,
+    ShowCounutriesComponent,
+    MyListFavoritesComponent,
+    ModalComponent,
+
   ],
   imports: [
     CommonModule,
@@ -63,6 +71,7 @@ import { MatDialogModule } from '@angular/material/dialog';
    // NgxLoadingModule,
     MatChipsModule,
     MatDialogModule,
+    MatFormFieldModule
 
   ]
 })

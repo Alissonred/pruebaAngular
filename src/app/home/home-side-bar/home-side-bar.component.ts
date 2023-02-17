@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 //import { MatDrawer } from "@angular/material/sidenav";
 import { Router } from "@angular/router";
-import { AddEditElementComponent } from '../crud/add-edit-element/add-edit-element.component';
 import { HomeComponent } from "../home.component";
 
 @Component({
@@ -26,9 +25,10 @@ export class HomeSideBarComponent {
 
   public selectedMenu = null;
 
+
   constructor(
     private router: Router,
-    private _dialog : MatDialog
+
     ) { }
 
   public ngOnInit(): void {
@@ -48,7 +48,5 @@ export class HomeSideBarComponent {
     localStorage.setItem("Colapsado", this.collapsed ? "Si" : "No");
   }
 
-  openAddEditForm(){
-    this._dialog.open(AddEditElementComponent)
-  }
+
 }
