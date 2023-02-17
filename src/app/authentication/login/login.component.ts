@@ -62,9 +62,24 @@ export class LoginComponent implements OnInit {
   public ChangePassMode() {
     this.showPassword = !this.showPassword;
   }
+
+
   onLogin(form: any){
-    this.authService.loginByEmail(form).subscribe(data =>{console.log(data)
-    })
+    const copyForm = {...form}
+    if(copyForm.user== this.authService.pseudoUser.user && copyForm.password == this.authService.pseudoUser.password ){
+      this.router.navigate(['home']);
+    }
+
+
+
+    // this.authService.loginByEmail(form).subscribe({
+    //   next:(val:any)=>{
+    //     this.router.navigate(['home']);
+    //   },
+    //   error:(err:any)=>{
+    //     console.log(err);
+    //   }
+    // })
    console.log(form);
 
   }

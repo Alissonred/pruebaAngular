@@ -10,8 +10,8 @@ import { NationalDailyData } from '../interfaces/nationalDailyData.type';
 })
 export class AuthService {
 
- // url:string = "http://noTengoApi/"
- url:string = 'https://api.covidtracking.com/v2/'////////// no colocar url sino crear metodo para dejarlo pasar
+
+ url:string = 'http://localhost:3000/'////////// no colocar url sino crear metodo para dejarlo pasar
   constructor(private http: HttpClient) { }
 
   loginByEmail(form:User_login): Observable<Response>{
@@ -19,8 +19,11 @@ export class AuthService {
     return this.http.post<Response>(address, form);
   }
 
-/* getNationalDailyData(date:string): Observable<NationalDailyData>{
-  let address = this.url + `us/daily/${date}.json`
-  return this.http.get<NationalDailyData>(address);
-} */
+  pseudoUser= {
+    user: "elia.martinez@systers.xyz",
+    password :"123456"
+  }
+
+
+
 }

@@ -30,13 +30,15 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
       this.addEditForm.patchValue(this.data)
   }
+
+  
   addEditElement(){
     if(this.data){ //// pte validar campos antes de envío
       this._addService.updateNote(this.data.id, this.addEditForm.value).subscribe({
         next:(val:any)=>{
           alert('Note Updated succesfully!')
           this._dialogRef.close(true)
-          
+
         },
         error:(err:any)=>{
           console.log(err);

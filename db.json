@@ -16,6 +16,28 @@
   "profile": {
     "name": "typicode"
   },
+  "auth": [
+    {
+      "user": "elia.martinez@systers.xyz",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "user": "elia.martinez@systers.xyz",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "user": "elia.martinez@systers.xyz",
+      "password": "",
+      "id": 5
+    },
+    {
+      "user": "elia.martinez@systers.xyz",
+      "password": "123456",
+      "id": 6
+    }
+  ],
   "notes": [
     {
       "Date": "10/12/2021",
