@@ -16,6 +16,7 @@ export class ShowCounutriesComponent  implements OnInit{
   globalCipher!: object;
   countriesList!: Array<object>;
   countriesListPage!: Array<object>;
+  message!: string;
 
 
   constructor(private apiGet:GetDataService){}
@@ -24,6 +25,7 @@ export class ShowCounutriesComponent  implements OnInit{
     {
       next:(res)=>{
         console.log(res , 'anddd');
+        res.Message == "Caching in progress"? this.message = "Please wait, we are updating data":""
         this.dataSource = new MatTableDataSource(res.Countries);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

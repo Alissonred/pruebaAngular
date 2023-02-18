@@ -1,24 +1,29 @@
 <div class="wrapper">
   <!--  section for sidebar that works on desktop -->
-  <!-- <app-home-side-bar class="wrapper_sidebar" [collapsed]="collapsed"  [menusList]="menusList"></app-home-side-bar> -->
+  <app-home-side-bar class="wrapper_sidebar" [collapsed]="collapsed" ></app-home-side-bar>
   <!-- SIDENAV -->
 
   <mat-drawer-container class="container-sidenav" [hasBackdrop]="true">
+
     <mat-drawer #drawer mode="over" class="sidebar-hidden-control">
-      hollaaaa
-      <!-- <app-home-side-bar [hideToggle]="hideToggle" [collapsed]="collapsed"  [menusList]="menusList"></app-home-side-bar> -->
+      <app-home-side-bar [hideToggle]="hideToggle" [collapsed]="collapsed" ></app-home-side-bar>
     </mat-drawer>
+
     <mat-drawer-content>
+
+
       <!-- CONTENT -->
       <div class="div-router-outlet">
         <router-outlet></router-outlet>
       </div>
+
       <!-- BTN OPEN SIDENAV -->
       <div (click)="collapsed = false; drawer.toggle()" class="btn-responsive">
         <mat-icon mat-list-icon class="mat-icon-open-home mat-icon-burguer">
           view_headline
         </mat-icon>
       </div>
+
     </mat-drawer-content>
   </mat-drawer-container>
 </div>
@@ -42,7 +47,6 @@
     </button>
     <button mat-menu-item (click)="logout()">
         <mat-icon>logout</mat-icon>
-      <!-- <mat-icon [svgIcon]="'logout'"></mat-icon> -->
     </button>
   </mat-menu>
 </div>

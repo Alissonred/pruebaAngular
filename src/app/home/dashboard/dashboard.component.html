@@ -1,27 +1,25 @@
 <div class="dashboard-container">
 
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <!-- header and title of section -->
-  <div class="dashboard-wraper">
-    <div class="header">
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div>
+    <!-- header and title of section -->
+    <div class="dashboard-wraper">
+      <div class="header">
+      </div>
     </div>
-  </div>
-  <!-- Showing dashboard with information -->
-  <div class="ScrollBar dashboard-box-wrapper">
-    <br/>
-<app-nav-menu> </app-nav-menu>
-<!-- <a  routerLink="show-countries">Countries today</a>
-<a routerLink="list-favorites">my list</a> -->
-    <div>
-    </div>
-    <router-outlet></router-outlet>
 
-    <div *ngFor="let data of elements">
-      <!-- <app-dashboard-box [data]="data" [mainRef]="this"></app-dashboard-box> -->
+    <div class="ScrollBar dashboard-box-wrapper">
+      <br />
+    
+
+      <div class="content-dashboard-container">
+        <router-outlet></router-outlet>
+      </div>
+      <br />
+
     </div>
-    <br/>
+
   </div>
-</div>
+
 
 </div>

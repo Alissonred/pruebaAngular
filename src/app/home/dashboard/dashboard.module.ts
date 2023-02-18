@@ -33,7 +33,7 @@ import { ModalComponent } from './modal/modal.component';
 import { DataNoteComponent } from './data-note/data-note.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
+
 
 
 
@@ -45,7 +45,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     MyListFavoritesComponent,
     ModalComponent,
     DataNoteComponent,
-    NavMenuComponent,
+
   ],
   imports: [
     CommonModule,

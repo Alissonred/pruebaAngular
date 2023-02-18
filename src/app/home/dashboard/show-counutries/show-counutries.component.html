@@ -1,4 +1,13 @@
-<mat-form-field>
+<div class="show-countries-container">
+<div class="TitleTable">
+  <h1> Daily cipher covid by country</h1>
+</div>
+
+<div *ngIf="message" class="TitleTable">
+  <h3> {{message}}</h3>
+</div>
+
+<mat-form-field class="filterTable">
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 </mat-form-field>
@@ -54,4 +63,5 @@
   </table>
 
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>
 </div>

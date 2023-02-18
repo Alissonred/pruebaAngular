@@ -9,11 +9,12 @@ const routes: Routes = [
   { path: '',
   component: DashboardComponent,
   children: [
+    { path: '', component: ShowCounutriesComponent},
     { path: 'show-countries', component: ShowCounutriesComponent},
     { path: 'list-favorites', component: MyListFavoritesComponent},
     {
       path: "**",
-      redirectTo: "dashboard",
+      redirectTo: "show-countries",
       pathMatch: "full"
     }
   ]

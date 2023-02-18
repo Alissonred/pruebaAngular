@@ -214,7 +214,15 @@
   z-index: -1;
   margin-left: -3px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
+.content-dashboard-container{
+  display: flex;
+}
+
 
 @media (min-width: 1025px) {
   .icon-burguer {
