@@ -10,11 +10,14 @@ import { DashboardComponent } from "../dashboard.component";
 })
 export class DashboardBoxComponent implements OnInit {
   public expanded = false;
+  @Input() public data!: DashboardItem[];
+  @Input() public mainRef!: DashboardComponent;
+  public fixedData!: DashboardItem;
 
 
   constructor(
     private dashboardService: DashboardService) {
-    //this.fixedData = this.dashboardService.getNewDashboardData()[0];
+    this.fixedData = this.dashboardService.getNewDashboardData()[0];
   }
 
   public ngOnInit(): void {

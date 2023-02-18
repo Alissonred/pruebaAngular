@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "auth": [
+    {
+      "user": "elia.martinez@systers.xyz",
+      "password": "123456",
+      "id": 3
+    }
+  ],
+  "notes": [
+    {
+      "Date": "2023-02-11T05:00:00.000Z",
+      "TotalConfirmed": 55,
+      "TotalDeaths": 3,
+      "TotalRecovered": 2,
+      "BranchOffice": "",
+      "KeyWord": "normal",
+      "Notes": "nldfs",
+      "id": 17
+    },
+    {
+      "Date": "2023-02-01T05:00:00.000Z",
+      "TotalConfirmed": 2,
+      "TotalDeaths": 0,
+      "TotalRecovered": 52,
+      "BranchOffice": "north",
+      "KeyWord": "alfo",
+      "Notes": "lkjem",
+      "id": 18
+    }
+  ]
+}

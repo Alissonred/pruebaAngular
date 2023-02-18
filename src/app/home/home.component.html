@@ -1,1 +1,52 @@
-<h1>home funciona</h1>
+<div class="wrapper">
+  <!--  section for sidebar that works on desktop -->
+  <app-home-side-bar class="wrapper_sidebar" [collapsed]="collapsed" ></app-home-side-bar>
+  <!-- SIDENAV -->
+
+  <mat-drawer-container class="container-sidenav" [hasBackdrop]="true">
+
+    <mat-drawer #drawer mode="over" class="sidebar-hidden-control">
+      <app-home-side-bar [hideToggle]="hideToggle" [collapsed]="collapsed" ></app-home-side-bar>
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+
+      <!-- CONTENT -->
+      <div class="div-router-outlet">
+        <router-outlet></router-outlet>
+      </div>
+
+      <!-- BTN OPEN SIDENAV -->
+      <div (click)="collapsed = false; drawer.toggle()" class="btn-responsive">
+        <mat-icon mat-list-icon class="mat-icon-open-home mat-icon-burguer">
+          view_headline
+        </mat-icon>
+      </div>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+<!--ICONOS FLOTANDO EN LA ESQUINA SUPERIOR DERECHA-->
+<div class="user-manager">
+  <!--  PRIMER ICONO-->
+  <div [ngClass]="{'config_active': configSelected === true}"></div>
+  <!--  SEGUNDO ICONO-->
+  <div [ngClass]="{'profile_active': profileSelected === true}"></div>
+  <img class="icon-manage" [matMenuTriggerFor]="menu1" src="/assets/iconos/perfil@PYP.png" alt="image"/>
+  <mat-menu #menu1="matMenu">
+    <button mat-menu-item disabled>
+      <span class="black">{{userName}}</span>
+    </button>
+    <button mat-menu-item disabled>
+      <span class="black">Rol: {{userRole}}</span>
+    </button>
+    <button mat-menu-item>
+      <span>Ver detalles</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+    </button>
+  </mat-menu>
+</div>

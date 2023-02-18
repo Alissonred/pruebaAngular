@@ -1,27 +1,37 @@
-# PruebaAngular
+# Schedule hospital data
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+## Índice
 
-## Development server
+- [1. Descripción](#1-descripcion)
+- [2. Resumen del proyecto](#2-resumen-del-proyecto)
+- [3. Fuentes de información](#3-fuentes-de-informacion)
+- [4. Funcionamiento básico](#4-funcionamiento-basico)
+- [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptacion-minimos-del-proyecto)
+- [6. Consideraciones técnicas](#6-consideraciones-tecnicas)
+- [7. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 1. Descripción
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El presente proyecto está modelado para administrar las cifras generales referentes a pacientes con covid19 de una cadena de hospitales. 
+Dada la crisis sanitaria debido al covid 19 los hospitales deben tener un control interno general de las cifras de casos por día y realizar dichos reportes a la secretaría de salud para información de la ciudadanía.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 2. Resumen del proyecto
 
-## Running unit tests
+La aplicación permite agregar registros con campos para: fecha, total de casos confirmados, total de muertes, total de recuperaciones entre otras.Adicionalmente, la aplicación permite editar, eliminar y visualizar de manera tabulada el total de registros.
+Por otra parte,  permite visualizar las cifras generales referentes al covid 19 a nivel mundial.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 3. Fuentes de información
 
-## Running end-to-end tests
+La aplicación consume dos API: 
+* Para obtener las cifras diarias de cada pais se implementa [CORONAVIRUS COVID19 API](https://documenter.getpostman.com/view/10808728/SzS8rjbc#00030720-fae3-4c72-8aea-ad01ba17adf8)
+* Para realizar la administración de los registros, se implementa la librería [Json Server](https://www.npmjs.com/package/json-server). Que permite generar rápidamente una API REST falsa que se ejecuta en el puerto http://localhost:3000/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+ ## 4. Funcionamiento básico
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Para iniciar sesión modo prueba, se deben registrar elia.martinez@systers.xyz como usuario y 123456 como contraseña
+* Luego de acceder al home, a través del menú en la parte izquierda a la sección "Countries today" para poder visualizar las cifras diarias de casos en cada pais
+* En la sección "Records, se podrán consultar, Editar y eliminar cada uno de los registros realizados"; asi como añadir un nuevo registro.

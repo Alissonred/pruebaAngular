@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 //import { MatDrawer } from "@angular/material/sidenav";
 import { Router } from "@angular/router";
-import { HomeComponent } from "../home.component";
+//import { HomeComponent } from "../home.component";
 
 @Component({
   selector: 'app-home-side-bar',
@@ -16,31 +17,12 @@ export class HomeSideBarComponent {
   @Input()
   public collapsed: boolean = false;
 
-  @Input()
-  public menusList: any[] = [];
-
- /*  @Input()
-  public drawer: MatDrawer; */
-
-  public selectedMenu = null;
-
-  constructor(
-    private router: Router) { }
-
-  public ngOnInit(): void {
-  }
-
-/*   public async gotoMenu(menu) {
-    await this.router.navigateByUrl(menu.ruta);
-    if (this.drawer) {
-      this.drawer.close();
-    }
-  } */
-
-
+  constructor(private router: Router) { }
 
   public collapse() {
     this.collapsed = !this.collapsed;
     localStorage.setItem("Colapsado", this.collapsed ? "Si" : "No");
   }
+
+
 }

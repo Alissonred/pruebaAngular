@@ -1,0 +1,62 @@
+
+<div mat-dialog-title class="dialog-container">
+  <h1>{{data? "Update note": "Add note"}}</h1>
+</div>
+
+<form [formGroup]="addEditForm" (ngSubmit)="addEditElement()">
+
+  <div mat-dialog-content class="dialog-inputs">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker"  formControlName="Date" required="required">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Total Confirmed
+      </mat-label>
+      <input matInput type="number" formControlName="TotalConfirmed" required="required">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Total Deaths</mat-label>
+      <input matInput type="number"  formControlName="TotalDeaths" required="required">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Total Recovered</mat-label>
+      <input matInput type="number" formControlName="TotalRecovered" required="required">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Branch Office</mat-label>
+      <mat-select formControlName="BranchOffice" required="required">
+        <mat-option *ngFor="let val of BranchOffice" [value]="val">{{val}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Key word</mat-label>
+      <input matInput type="string" formControlName="KeyWord" required="required">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <textarea matInput formControlName="Notes"></textarea>
+    </mat-form-field>
+
+
+<!--     <mat-form-field appearance="outline">
+      <mat-label>Textarea</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field> -->
+
+  </div>
+  <div mat-dialog-actions class="modal-buttons">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data? "Update": "Save"}}</button>
+  </div>
+</form>

@@ -1,0 +1,46 @@
+table {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mesage{
+  color: red;
+}
+.filterTable{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.TitleTable{
+color: #efefef;
+font-family: "Montserrat", sans-serif;
+text-align: center;
+}
+
+
+@media (max-width: 700px) {
+
+
+.mat-mdc-table .mdc-data-table__header-row {
+  display: none;
+}
+
+tr {
+  display: flex;
+  flex-direction: column;
+  min-height: 5rem;
+  flex-wrap: wrap;
+  border-bottom: 3px solid #aeaeae;
+}
+td{
+  text-align: right;
+}
+td::before{
+  content:attr(data-label);
+  font-weight: bold;
+  float: left;
+}
+
+}
+

@@ -1,8 +1,10 @@
 import { Component,OnInit, ViewChild} from '@angular/core';
-//import { MatDrawer } from "@angular/material/sidenav";
+import { MatDialog } from '@angular/material/dialog';
+import { MatDrawer } from "@angular/material/sidenav";
 import { Router } from "@angular/router";
 import { AuthService } from "../services/auth.service";
 import { ToastService } from "../services/toast.service";
+
 
 
 @Component({
@@ -25,19 +27,27 @@ export class HomeComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private toast: ToastService,
-    private router: Router
+    private router: Router,
+
   ) {
   }
 
   public async ngOnInit() {
-    //this.initSidebar();
+    this.initSidebar();
   }
   public initSidebar(){
-   // this.menusList.push({icono: "Dashboard@PYP.png", nombre: "Dashboard", ruta: '/home/dashboard'});
+   //this.menusList.push({icono: "Dashboard@PYP.png", nombre: "Dashboard", ruta: '/home/dashboard'});
   }
-
+  public userName = localStorage.getItem("userName")
   public async logout() {
+    if(confirm('Do you want to log out?')){
+      localStorage.removeItem("pseudoToken")
+      this.router.navigate(['login']);
+    }
    // this.toast.success("Sesión cerrada exitosamente");
    // this.router.navigateByUrl("/");
   }
+
+
+
 }
