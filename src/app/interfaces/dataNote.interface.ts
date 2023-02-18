@@ -4,4 +4,7 @@ export interface DataNotes{
   TotalConfirmed : number,
   TotalDeaths : number,
   TotalRecovered : number,
+  BranchOffice : string,
+  keyword : string,
+  Notes : string,
 }

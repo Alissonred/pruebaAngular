@@ -26,7 +26,7 @@ export class DataNoteComponent implements OnInit{
     }
 
 
-  displayedColumns: string[] = ['Id', 'Date', 'Confirmed', 'Deaths', 'Recovered', 'Options'];
+  displayedColumns: string[] = ['Id', 'Date', 'Confirmed', 'Deaths', 'Recovered', 'BranchOffice', 'KeyWord', 'Options'];
   dataSource !: MatTableDataSource<DataNotes>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

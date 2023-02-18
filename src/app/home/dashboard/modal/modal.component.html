@@ -31,6 +31,24 @@
       <input matInput type="number" formControlName="TotalRecovered" required="required">
     </mat-form-field>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Branch Office</mat-label>
+      <mat-select formControlName="BranchOffice" required="required">
+        <mat-option *ngFor="let val of BranchOffice" [value]="val">{{val}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Key word</mat-label>
+      <input matInput type="string" formControlName="KeyWord" required="required">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <textarea matInput formControlName="Notes"></textarea>
+    </mat-form-field>
+
+
 <!--     <mat-form-field appearance="outline">
       <mat-label>Textarea</mat-label>
       <textarea matInput></textarea>

@@ -12,6 +12,8 @@ import { GetDataService } from 'src/app/services/get-data.service';
 export class ModalComponent implements OnInit {
   addEditForm : FormGroup
 
+  BranchOffice: string[]=[ "Central", "North", "South", "East"]
+
   constructor(
    private _fb: FormBuilder,
    private _addService: GetDataService,
@@ -23,6 +25,9 @@ export class ModalComponent implements OnInit {
       TotalConfirmed : null,
       TotalDeaths : null,
       TotalRecovered : null,
+      BranchOffice: "",
+      KeyWord : "",
+      Notes : "",
     })
 
   }
@@ -31,7 +36,7 @@ export class ModalComponent implements OnInit {
       this.addEditForm.patchValue(this.data)
   }
 
-  
+
   addEditElement(){
     if(this.data){ //// pte validar campos antes de envío
       this._addService.updateNote(this.data.id, this.addEditForm.value).subscribe({
