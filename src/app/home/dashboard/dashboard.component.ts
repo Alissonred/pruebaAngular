@@ -63,9 +63,6 @@ export class DashboardComponent {
 
   }
 
-  /**
-   * getMetrics
-   */
   public async getData() {
     try {
       this.loading = true;

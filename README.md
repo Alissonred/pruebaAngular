@@ -20,13 +20,7 @@ Dada la crisis sanitaria debido al covid 19 los hospitales deben tener un contro
 
 ## 2. Resumen del proyecto
 
-La aplicación permite agregar registros con campos para: fecha, total de casos confirmados, total de muertes, total de recuperaciones entre otras.
-
-//////////////imagen
-
-Adicionalmente, la aplicación permite editar, eliminar y visualizar de manera tabulada el total de registros.
-
-//////////////imagen
+La aplicación permite agregar registros con campos para: fecha, total de casos confirmados, total de muertes, total de recuperaciones entre otras.Adicionalmente, la aplicación permite editar, eliminar y visualizar de manera tabulada el total de registros.
 Por otra parte,  permite visualizar las cifras generales referentes al covid 19 a nivel mundial.
 
 ## 3. Fuentes de información

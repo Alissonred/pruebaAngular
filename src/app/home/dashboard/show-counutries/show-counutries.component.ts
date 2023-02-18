@@ -25,7 +25,7 @@ export class ShowCounutriesComponent  implements OnInit{
     {
       next:(res)=>{
         console.log(res , 'anddd');
-        res.Message == "Caching in progress"? this.message = "Please wait, we are updating data":""
+        res.Message == "Caching in progress"? this.message = "Please wait, we are updating data...":""
         this.dataSource = new MatTableDataSource(res.Countries);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

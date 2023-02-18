@@ -1,11 +1,11 @@
 
-<div mat-dialog-title>
+<div mat-dialog-title class="dialog-container">
   <h1>{{data? "Update note": "Add note"}}</h1>
 </div>
 
 <form [formGroup]="addEditForm" (ngSubmit)="addEditElement()">
 
-  <div mat-dialog-content>
+  <div mat-dialog-content class="dialog-inputs">
 
     <mat-form-field appearance="outline">
       <mat-label>Choose a date</mat-label>
@@ -55,8 +55,8 @@
     </mat-form-field> -->
 
   </div>
-  <div mat-dialog-actions>
+  <div mat-dialog-actions class="modal-buttons">
     <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
-    <button mat-raised-button color="blue" type="submit">{{data? "Update": "Save"}}</button>
+    <button mat-raised-button color="primary" type="submit">{{data? "Update": "Save"}}</button>
   </div>
 </form>

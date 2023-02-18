@@ -3,6 +3,9 @@ table {
   font-family: "Montserrat", sans-serif;
 }
 
+.mesage{
+  color: red;
+}
 .filterTable{
 width: 100%;
 display: flex;
@@ -10,53 +13,34 @@ align-items: center;
 justify-content: center;
 }
 .TitleTable{
-
 color: #efefef;
 font-family: "Montserrat", sans-serif;
 text-align: center;
 }
 
-.mat-elevation-z8{
-
-}
-
-.show-countries-container{
-/* min-width: 668px;
-margin: 5rem; */
-}
 
 @media (max-width: 700px) {
-  .filterTable{
-    width:90 vh;
-    }
 
-    table {
-      display: flex;
-      flex-wrap: wrap;
-    }
-/*     tbody{
-      display: flex;
-      flex-wrap: wrap;
-    } */
 
-  th{
-    display: none;
-  }
-  thead tr th:first-child {
-    display: block;
-  }
-  tr {
-    display: flex;
-    flex-direction: column;
-    min-height: 9rem;
-    flex-wrap: wrap;
-  }
-/*   td{
-    min-height: auto;
-  } */
+.mat-mdc-table .mdc-data-table__header-row {
+  display: none;
+}
 
-/*   .header {
-    display: none;
-  } */
+tr {
+  display: flex;
+  flex-direction: column;
+  min-height: 5rem;
+  flex-wrap: wrap;
+  border-bottom: 3px solid #aeaeae;
+}
+td{
+  text-align: right;
+}
+td::before{
+  content:attr(data-label);
+  font-weight: bold;
+  float: left;
+}
+
 }
 

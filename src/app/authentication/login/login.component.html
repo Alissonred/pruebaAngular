@@ -30,16 +30,7 @@
                 <mat-icon  class="password-icon" (click)="ChangePassMode()">{{this.showPassword ? 'visibility_off':'visibility'}}</mat-icon>
               </div>
             </div>
-            <!-- Check and recover password -->
-<!--            <div class="recover-password">-->
-<!--              <mat-checkbox [checked]="rememberUser" (change)="this.ChangeCheck()" class="auxiliary-btn remember" >Recuérdame</mat-checkbox>-->
-<!--              <div class= "recover-pass"(click)="recoverPassword()">-->
-<!--                <mat-icon class="lock-icon">lock</mat-icon>-->
-<!--                <mat-label class="auxiliary-btn" >-->
-<!--                  Olvidé mi contraseña-->
-<!--                </mat-label>-->
-<!--              </div>-->
-<!--            </div>-->
+
             <!-- Action button -->
             <div class="button-container" class="mt-10">
               <button type="submit"  class="fadeIn fourth submit-btn login-btn" [disabled]="loginInProgress"><span>Iniciar Sesión</span></button>

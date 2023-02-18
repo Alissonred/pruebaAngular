@@ -25,34 +25,6 @@
   ],
   "notes": [
     {
-      "Date": "2023-02-18T05:00:00.000Z",
-      "TotalConfirmed": 20,
-      "TotalDeaths": 2,
-      "TotalRecovered": 5,
-      "KeyWord": "Normal",
-      "Notes": "No report",
-      "id": 14
-    },
-    {
-      "Date": "2023-02-17T05:00:00.000Z",
-      "TotalConfirmed": 12,
-      "TotalDeaths": 0,
-      "TotalRecovered": 5,
-      "KeyWord": "Normal",
-      "Notes": "There was patients with syntoms",
-      "id": 15
-    },
-    {
-      "Date": "2023-02-10T05:00:00.000Z",
-      "TotalConfirmed": 0,
-      "TotalDeaths": 0,
-      "TotalRecovered": 0,
-      "BranchOffice": "",
-      "KeyWord": "normal",
-      "Notes": "jo",
-      "id": 16
-    },
-    {
       "Date": "2023-02-11T05:00:00.000Z",
       "TotalConfirmed": 55,
       "TotalDeaths": 3,

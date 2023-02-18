@@ -4,7 +4,7 @@
 </div>
 
 <div *ngIf="message" class="TitleTable">
-  <h3> {{message}}</h3>
+  <h3 class="mesage"> {{message}}</h3>
 </div>
 
 <mat-form-field class="filterTable">
@@ -18,37 +18,37 @@
     <!-- ID Column -->
     <ng-container matColumnDef="Country">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
-      <td mat-cell *matCellDef="let row"> {{row.Country}} </td>
+      <td mat-cell *matCellDef="let row" data-label="Country" > {{row.Country}} </td>
     </ng-container>
 
     <!-- Date Column -->
     <ng-container matColumnDef="NewConfirmed">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> New Confirmed </th>
-      <td mat-cell *matCellDef="let row"> {{row.NewConfirmed}}</td>
+      <td mat-cell *matCellDef="let row" data-label="New Confirmed "> {{row.NewConfirmed}}</td>
     </ng-container>
 
     <!-- Confirmed Column -->
     <ng-container matColumnDef="TotalConfirmed">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Confirmed </th>
-      <td mat-cell *matCellDef="let row"> {{row.TotalConfirmed}} </td>
+      <td mat-cell *matCellDef="let row" data-label="Total Confirmed"> {{row.TotalConfirmed}} </td>
     </ng-container>
 
     <!-- Deaths Column -->
     <ng-container matColumnDef="NewDeaths">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> New Deaths </th>
-      <td mat-cell *matCellDef="let row"> {{row.NewDeaths}} </td>
+      <td mat-cell *matCellDef="let row" data-label="New Deaths"> {{row.NewDeaths}} </td>
     </ng-container>
 
     <!-- Recovered Column -->
     <ng-container matColumnDef="TotalDeaths">
      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Deaths </th>
-     <td mat-cell *matCellDef="let row"> {{row.TotalDeaths}} </td>
+     <td mat-cell *matCellDef="let row" data-label="Total Deaths"> {{row.TotalDeaths}} </td>
    </ng-container>
 
     <!-- Recovered Column -->
     <ng-container matColumnDef="TotalRecovered">
      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Recovered </th>
-     <td mat-cell *matCellDef="let row"> {{row.TotalRecovered}} </td>
+     <td mat-cell *matCellDef="let row" data-label="Total Recovered"> {{row.TotalRecovered}} </td>
    </ng-container>
 
 
