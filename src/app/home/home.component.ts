@@ -38,8 +38,12 @@ export class HomeComponent implements OnInit {
   public initSidebar(){
    //this.menusList.push({icono: "Dashboard@PYP.png", nombre: "Dashboard", ruta: '/home/dashboard'});
   }
-
+  public userName = localStorage.getItem("userName")
   public async logout() {
+    if(confirm('Do you want to log out?')){
+      localStorage.removeItem("pseudoToken")
+      this.router.navigate(['login']);
+    }
    // this.toast.success("Sesión cerrada exitosamente");
    // this.router.navigateByUrl("/");
   }

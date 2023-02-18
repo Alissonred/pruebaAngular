@@ -2,7 +2,7 @@
   <!--  section for sidebar that works on desktop -->
   <app-home-side-bar class="wrapper_sidebar" [collapsed]="collapsed"  [menusList]="menusList"></app-home-side-bar>
   <!-- SIDENAV -->
- 
+
   <mat-drawer-container class="container-sidenav" [hasBackdrop]="true">
     <mat-drawer #drawer mode="over" class="sidebar-hidden-control">
       <app-home-side-bar [hideToggle]="hideToggle" [collapsed]="collapsed"  [menusList]="menusList"></app-home-side-bar>
@@ -31,7 +31,7 @@
   <img class="icon-manage" [matMenuTriggerFor]="menu1" src="/assets/iconos/perfil@PYP.png" alt="image"/>
   <mat-menu #menu1="matMenu">
     <button mat-menu-item disabled>
-      <span class="black">{{'this.authService.getNames({firstName: true, lastName: true})'}}</span>
+      <span class="black">{{userName}}</span>
     </button>
     <button mat-menu-item disabled>
       <span class="black">Rol: {{userRole}}</span>
@@ -40,8 +40,8 @@
       <span>Ver detalles</span>
     </button>
     <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
       <!-- <mat-icon [svgIcon]="'logout'"></mat-icon> -->
-      <span>Cerrar Sesión</span>
     </button>
   </mat-menu>
 </div>

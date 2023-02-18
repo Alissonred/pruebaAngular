@@ -67,10 +67,13 @@ export class LoginComponent implements OnInit {
   onLogin(form: any){
     const copyForm = {...form}
     if(copyForm.user== this.authService.pseudoUser.user && copyForm.password == this.authService.pseudoUser.password ){
+      localStorage.setItem("pseudoToken","everythinkIsOkYouCanContinue")
+      localStorage.setItem("userName","copyForm.user")
       this.router.navigate(['home']);
+    }else{
+      console.log('Incorrect data');
+
     }
-
-
 
     // this.authService.loginByEmail(form).subscribe({
     //   next:(val:any)=>{
